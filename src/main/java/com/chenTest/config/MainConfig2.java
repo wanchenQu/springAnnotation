@@ -24,7 +24,7 @@ public class MainConfig2 {
      * org.springframework.web.context.WebApplicationContext.SCOPE_REQUEST,
      * org.springframework.web.context.WebApplicationContext.SCOPE_SESSION,
      * 懒加载：
-     * 单实例模式下，容器启动时不调用方法，第一次使用获取bean的时候创建对象并初始化
+     * 单实例模式下，容器启动时不调用方法，第一次使用获取bean的时候创建对象并初始化dd
      */
     @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
     @Lazy
