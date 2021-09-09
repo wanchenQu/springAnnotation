@@ -24,6 +24,6 @@ public class MainConfig {
     @Bean("person")
     /**把person注册进容器，id默认是方法名，可以自定义*/
     public Person person01() {
-        return new Person("wangxie", 26);
+        return new Person("wangxie", 26, "11");
     }
 }

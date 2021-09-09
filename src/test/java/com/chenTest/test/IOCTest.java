@@ -1,5 +1,6 @@
 package com.chenTest.test;
 
+import com.chenTest.bean.Blue;
 import com.chenTest.bean.Person;
 import com.chenTest.config.MainConfig;
 import com.chenTest.config.MainConfig2;
@@ -46,6 +47,21 @@ public class IOCTest {
     @Test
     public void testImport() {
         printBeans(applicationContext);
+        Blue bean = applicationContext.getBean(Blue.class);
+        System.out.println(bean);
+
+        // 工厂bean获取的是FactoryBean中getObject方法创建的对象
+        Object colorFactoryBean1 = applicationContext.getBean("colorFactoryBean");
+        Object colorFactoryBean2 = applicationContext.getBean("colorFactoryBean");
+        // 默认获取FactoryBean中getObject方法创建的对象
+        // 通过在id前加&标识，获取工厂Bean本身
+        Object colorFactoryBean3 = applicationContext.getBean("&colorFactoryBean");
+
+        System.out.println("---------colorFactoryBean1类型" + colorFactoryBean1.getClass());
+        System.out.println("---------colorFactoryBean2类型" + colorFactoryBean2.getClass());
+        System.out.println("---------colorFactoryBean3类型" + colorFactoryBean3.getClass());
+
+        System.out.println(colorFactoryBean1 == colorFactoryBean2);
     }
 
 }
